@@ -31,3 +31,13 @@ names(player_total_probs) = c("Player", "Total_Prob")
 # In this Scenario, player 0 deals so is least likely to win deal.
 #  Player 0 deals first to Player 1, then 2, then 3.  This follows
 #  The order of total probability to win the deal.
+
+######################
+# Interesting to note
+# The following formula also gives the PMF:
+pdm = 1/24 * 1/23 * 23:1 * 2
+# or: sapply(23:1, function(d) {1/24 * 1/23 * d * 2})
+sum(pdm)
+round(sum(pdm - sapply(1:23, function(d) {probX(24, d)})))
+
+    
